@@ -13,7 +13,7 @@
 
 html {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  /* color: var(--secondary-color); */
   transition: all 0.5s ease-in;
 }
 
@@ -26,7 +26,6 @@ html.dark {
 
 html.dark {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
 }
 
 body {
@@ -98,7 +97,21 @@ body {
   opacity: 1;
 }
 
-/* Notes btns styles */
+/* Alert styles */
+.alert {
+  position: fixed;
+  top: 50%;
+  left: 45%;
+  padding: 10px 30px;
+  border-radius: 40px;
+  font-size: 20px;
+  background-color: #fc3605;
+  box-shadow: 1px 3px 1px 1px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* Menu btns styles */
 .fixed {
   position: fixed;
   top: 1rem;
@@ -121,6 +134,7 @@ button .fas {
   padding-right: 0.3rem;
 }
 
+/* Note styles */
 .note {
   background-color: var(--quartenary-color);
   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);

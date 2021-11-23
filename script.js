@@ -1,6 +1,7 @@
 const addBtn = document.getElementById('add');
 const clearBtn = document.getElementById('clear');
 const darkModeBtn = document.getElementById('dark-mode-btn');
+const alert = document.querySelector('.alert');
 
 // Get previously created notes from local storage and create a note element for each one
 const notes = JSON.parse(localStorage.getItem('notes'));
@@ -43,8 +44,9 @@ function addNewNote(text = '') {
   // remove note from DOM and LS
   deleteBtn.addEventListener('click', () => {
     note.remove();
-
     updateLS();
+    alert.textContent = 'Note deleted!';
+    displayAlert();
   });
 
   // toggle between text area (where we can type) and formatted, protected saved version of the note
@@ -70,6 +72,15 @@ function clearAllNotes() {
   const notes = document.querySelectorAll('.note');
   notes.forEach((note) => note.remove());
   updateLS();
+  alert.textContent = 'All notes deleted!';
+  displayAlert();
+}
+
+function displayAlert() {
+  alert.style.opacity = '1';
+  setTimeout(() => {
+    alert.style.opacity = '0';
+  }, 2000);
 }
 
 function updateLS() {
